@@ -13,14 +13,15 @@ public class TestFile {
     private static void printFilesName(String filename) {
         File homeDir = new File(filename);
         File[] files = homeDir.listFiles();
-        for (File file : files) {
-            if (file.isDirectory()) {
-                printFilesName(file.getAbsolutePath());
-            } else {
-                System.out.println(file.getName());
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    printFilesName(file.getAbsolutePath());
+                } else {
+                    System.out.println(file.getName());
+                }
             }
         }
-
     }
 
 }
